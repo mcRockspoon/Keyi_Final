@@ -19,7 +19,6 @@ const generateList = (listFlipData) => {
     const singleCard = Object.assign({}, e);
     singleCard.id = generatedId();
     singleCard.flipped = false;
-    console.log(singleCard);
     return singleCard;
   });
 };
@@ -49,7 +48,6 @@ const FlipGameContainers = ({ cards }) => {
   }, [state]);
 
   const viewFlipCard = (id) => {
-    console.log("viewed");
     const cardsUpdate = state.cards.map((card) => {
       const copyCard = { ...card };
       if (copyCard.id === id) copyCard.flipped = true;
@@ -149,11 +147,11 @@ const FlipGameContainers = ({ cards }) => {
     <div className="App">
       <h1>KEYI CARD READER</h1>
       {!state.doneFlipping && (
-        <h2>
+        <span>
           <h2>How to play </h2>
           <h3> 1. Pick 4 cards</h3> <h3> 2. Read your fortune </h3>{" "}
           <h3> Press RESET to repeat</h3>
-        </h2>
+        </span>
       )}
 
       {state.doneFlipping && <h3>{giveFortune()}</h3>}
