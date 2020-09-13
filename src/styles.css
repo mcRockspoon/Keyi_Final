@@ -1,0 +1,132 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  color: white;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+h1 {
+  margin: 8px 0px 2px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+h2 {
+  margin: 10px;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+h3 {
+  color: black;
+  font-size: 20px;
+  margin: 2px;
+}
+
+.App {
+  font-family: "Cabin", sans-serif;
+  text-align: center;
+}
+
+h4 {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.button {
+  padding: 14px 40px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: white;
+  background: black;
+  /* border-color: black; */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card {
+  margin: 6px 6px;
+  display: inline-block !important;
+}
+
+.flippy-front,
+.flippy-back {
+  padding: 0px !important;
+}
+
+.flipImage {
+  object-fit: cover;
+  object-position: 85% 50%;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.winFlipImage {
+  border-radius: 5px;
+  position: absolute;
+  background: linear-gradient(
+    161deg,
+    rgba(216, 182, 29, 0.87) 0%,
+    rgba(227, 200, 47, 0)
+  );
+  width: 100%;
+  height: 100%;
+}
+
+.containerFlipImage {
+  box-shadow: rgba(85, 39, 39, 0.64) 4px 4px 2px !important;
+  border-radius: 5px;
+}
+
+.containerFrontSide {
+  box-shadow: rgba(85, 39, 39, 0.64) 4px 4px 2px !important;
+  border-radius: 5px;
+  background-color: #41669d;
+}
+
+.backCardImage {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.flippyContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
