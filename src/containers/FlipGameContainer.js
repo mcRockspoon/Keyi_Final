@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardComponent from "../components/CardComponent";
+
 // import { generate } from "rxjs";
 
 const shuffleArray = (arr) => {
@@ -42,7 +43,7 @@ const FlipGameContainers = ({ cards }) => {
   });
 
   useEffect(() => {
-    if (!state.doneFlipping && state.isDone === 4) {
+    if (!state.doneFlipping && state.isDone === 3) {
       setState({ ...state, doneFlipping: true, onAnimation: true });
     }
   }, [state]);
@@ -134,13 +135,42 @@ const FlipGameContainers = ({ cards }) => {
   };
 
   const giveFortune = () => {
-    var fortune = "";
+    var char1 = [];
+    var fortune1 = [];
+    var desc1 = [];
+    var location = [];
     for (let i = state.cards.length - 1; i > 0; i--) {
       if (state.cards[i].flipped === true) {
-        fortune = fortune.concat(state.cards[i].fortune.concat("\n"));
+        // fortune = fortune.concat(state.cards[i].fortune.concat("\n"));
+        char1.push(state.cards[i].character);
+        desc1.push(state.cards[i].description);
+        fortune1.push(state.cards[i].fortune);
+        location.push(state.cards[i].location);
       }
     }
-    return fortune;
+
+    return (
+      <span>
+        <h2> {char1[0]} </h2>
+        <h4>{location[0]}</h4>
+        <h4>{desc1[0]}</h4>
+        <h3>{fortune1[0]}</h3>
+        <h2> {char1[1]} </h2>
+        <h4>{location[1]}</h4>
+        <h4>{desc1[1]}</h4>
+        <h3>{fortune1[1]}</h3>
+        <h2> {char1[2]} </h2>
+        <h4>{location[2]}</h4>
+        <h4>{desc1[2]}</h4>
+        <h3>{fortune1[2]}</h3>
+        <div class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p>this is the text inside the modal</p>
+          </div>
+        </div>
+      </span>
+    );
   };
 
   return (
@@ -149,12 +179,12 @@ const FlipGameContainers = ({ cards }) => {
       {!state.doneFlipping && (
         <span>
           <h2>How to play </h2>
-          <h3> 1. Pick 4 cards</h3> <h3> 2. Read your fortune </h3>{" "}
+          <h3> 1. Pick 3 cards</h3> <h3> 2. Read your fortune </h3>{" "}
           <h3> Press RESET to repeat</h3>
         </span>
       )}
 
-      {state.doneFlipping && <h3>{giveFortune()}</h3>}
+      {state.doneFlipping && <div>{giveFortune()}</div>}
       <h4>{generateCards()}</h4>
       <h1>
         <button type="reset" className="button" onClick={() => resetCards()}>
